@@ -76,3 +76,9 @@ Git 공부
 
 5. 원격 저장소
 - 원격저장소 관리하는 방법을 알아봅니다.
+- github = public은 무료, private 유료
+- gitlab = 무료, 불안정함. 서버에 셋팅해서 사용가능.
+
+원격저장소 연결 방법
+    1) Repository > add remote 선택
+    2) add 
