@@ -16,3 +16,14 @@ Git 공부
 1. 저장소 만들기 (init)
 
 2. 버전 만들기(commit)
+- Uncommiteed changes
+- 원하는 버전에 추가한 기능만 staging으로 올려서 커밋한다.
+- unstaged files는 수정된 파일들이 나타나는 곳
+- staged files 하나의 버전에 포함될 내용을 나타내는 곳
+  (변경된 모든 파일을 하나의 버전으로 두지 않아도 된다.)
+- unstaged == working copy
+- staged files == index, staging area
+- working directory > staging area > repository
+
+
+
