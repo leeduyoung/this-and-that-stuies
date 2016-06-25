@@ -25,5 +25,8 @@ Git 공부
 - staged files == index, staging area
 - working directory > staging area > repository
 
-
+3. 되돌리기
+- Discard : 어떤 파일을 수정했는데, 커밋전일 경우, 가장 마지막 커밋된 상태로 되돌릴수있다.
+  (작업하기 전 상태로 돌림)
+- 
 
