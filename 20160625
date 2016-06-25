@@ -29,12 +29,16 @@ Git 공부
 - Discard : 어떤 파일을 수정했는데, 커밋전일 경우, 가장 마지막 커밋된 상태로 되돌릴수있다.
   (작업하기 전 상태로 돌림)
 - Reset : 이미 커밋한 내용을 취소하는 방법, 이전 커밋상태로 되돌리는 방법
-    Reset master to this commit
-    1) soft
-    2) mixed
-    - 현재 working copy는 그대로 두고, 깃만 이전으로 되돌리고 싶은경우.
-    (깃 버전관리 시 유용)
-    3) hard
-    - working copy(현재 작업중인 상태)까지 이전으로 되돌리는 경우 사용.
+Reset master to this commit
+1) soft
+2) mixed
+- 현재 working copy는 그대로 두고, 깃만 이전으로 되돌리고 싶은경우.
+ (깃 버전관리 시 유용)
+3) hard
+- working copy(현재 작업중인 상태)까지 이전으로 되돌리는 경우 사용.
 
 - Revert(Reverse commit) : 버전상태는 그대로 남겨두고 이전 커밋(버전)상태로 돌아가고 싶은 경우 사용.
+
+
+
+
