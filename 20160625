@@ -57,8 +57,6 @@ Git 공부
 1) 브랜치 받을 곳으로 체크아웃한다.
 (master 브랜치와 ldy브랜치가 있을때, master로 합치길 원한다면, master브랜치에 checkout)
 2) 합칠 브렌치 ldy브렌치를 우클릭하고 merge ldy into master 클릭.
- 
-
 
 <브랜치간의 충돌 해결>
 
