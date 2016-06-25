@@ -74,10 +74,5 @@ Git 공부
 - Resolve Using Theirs : 머지한 코드 쓰겠다.
 - Mark Resolved : 현재 working copy에서 수동으로 수정한 코드 쓰겠다.
 
-<<<<<<< HEAD
-
 5. 원격 저장소
 - 원격저장소 관리하는 방법을 알아봅니다.
-=======
-5. 원격 저장소
->>>>>>> 실험3
