@@ -1,0 +1,43 @@
+[Sendbird 분석하기]
+
+1)
+2)
+3)
+
+[Javascript]
+
+1) .hasClass(className)
+- 클래스명이 일치하는 것이 있을 경우 ture를 반환. 
+- ex) <div id="mydiv" class="foo bar"></div>
+        $('#mydiv').hasClass('foo') 일 경우, true
+
+2) removeClass(className)
+- 특정한 클래스를 요소에서 제거
+
+
+[크롬 개발자 도구 디버깅방법]
+
+1) F10 > 한줄씩 디버깅방법 (cmd + ')
+2) 다음 브레이킹 포인트로 이동 F8 (cmd + \) 없다면 쭉 실행.
+3) F11 > step into 함수 안으로 진입 (cmd + ;)
+4) shift + F11 > step out 함수 밖으로 나옴 (cmd + shift + ;)
+
+Watch
+특정한 변수를 선택해 놓고, 디버깅함에 따라서 어떻게 변하는지 확인할 수 있는 기능
+
+DOM Brakpoints
+엘리먼트 중 특정 속성이 변경되는 사항을 감시할때 사용.
+
+XHR Brakpoints
+클라이언트와 서버가 ajax 통신을 하는 경우. 특정한 url에 대해 감시하고자 할 경우 사용.
+추가한후 빈칸으로 두면, 모든 ajax에 대해서 감시하겠다.
+
+Event Listner Breakpoints
+이벤트별로 감시할 수 있다.
+
+
+[homebrew]
+- 리눅스의 yum이나 apt-get과 같음.
+- 맥 package manager
+- $ brew help
+
