@@ -1,0 +1,67 @@
+Sendbird 사용하기
+
+기본적인 sendbird sample 구조
+1) 닉네임입력하고 진입.
+2) 자동으로 uuid 생성됨. (util.js > generateUUID() : 코드 변경시 해당 부분을 로그인 계정으로 입력되도록 변경)
+3) 1대1 채팅 클릭하면 멤버목록이 보여짐. (getUserList() 메소드 사용. sendbird api)
+4) 채팅하고자 하는 유저 선택 후 startMessage 클릭 (sendbird api. startMessage()메소드)
+
+내가 원하는 구조
+1) 로그인한다.
+2) 로그인 계정(email)으로 uuid 생성됨.
+3) 유저 프로필 보다가, 채팅 버튼을 누른다.
+4) 해당 유저의 email(uuid)를 통해 1:1 채팅이 신청된다. (startMessage() 불림)
+5) 채팅이 연결된다.
+
+실제 테스트 결과
+1) 최초에 localhost:8000으로 접속시 index.html 페이지 로딩됨.
+    - $python -m SimpleHTTPServer 8000 (파이썬 웹서버 실행)
+    - 실제 리눅스에 웹서버위에 올려서 테스트 해볼것!!!!!!!!!!
+2) 닉네임 설정하고, 접속시 uuid 가 부여됨. 
+    - 최초 1회 랜덤하게 생성 됨. generateUUID()메소드 사용.
+    - 이후부터는 쿠키값에서 이전에 생성한 값을 읽어와서 재사용함.
+3) 로그인된 내 계정(이메일)을 사용하여 uuid로 사용하고 싶어서 수정함
+    - checkGuestId() : 최초에 uuid확인하는 메소드 > 로그인된 계정으로 id 값 넣도록 변경
+    - getGuestId() : 이전에 접속한 정보가 있는지 체크(쿠키) > 위와 동일하게 변경
+4) 접속하면, 로그인한 값으로 uuid가 설정된것을 sendbird관리자 페이지에서 확인
+    - 현재는, 로그인한 계정이 아니라 nickname으로 설정한 값으로 함
+    - 실제 웹에서 할때는 로그인한 계정으로 변경할 것.
+
+==========================================================================
+
+Javascript api
+
+1) js로 현재 페이지의 url 가져오는 방법
+   
+    var link =  document.location.href;
+    console.log(link);
+
+2) 파라미터를 포함하는 url에서 파라미터값만 가져오고 싶은경우
+
+    var para = document.location.href.split("?");
+    console.log(para); 
+
+3) 현재 주소에서 파라미터명에 대한 값 추출하는 메소드
+
+    function getQuerystring(paramName){
+
+        var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제
+        var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기
+        
+        for(var i = 0; _tempArray.length; i++) {
+            var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기
+            
+            if(_keyValuePair[0] == paramName){ // _keyValuePair[0] : 파라미터 명
+                // _keyValuePair[1] : 파라미터 값
+                return _keyValuePair[1];
+            }
+        }
+    }    
+
+4) encodeURI() <> decodeURI()
+- 인터넷 주소표시에 쓰이는 특수문자들 : ; / = ? & 등은 인코딩하지 않는다.
+보통 인터넷주소 전체를 인코딩할때 사용한다.
+
+5) encodeURIComponent() <> decodeURIComponent()
+- 인터넷 주소 표시에 쓰이는 모든 문자를 추가로 인코딩한다.
+
