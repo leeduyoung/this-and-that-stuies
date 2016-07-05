@@ -1,0 +1,53 @@
+Javascript
+
+1) JSON.stringify
+:parse 는 string 개체를 json 개체로, stringify 는 json 개체를 string 개체로 변환시켜 줍니다.
+
+example 1)
+
+    var oData = {
+        Name: "SooYoung"
+        , Age: "29"
+    }
+
+    var sPerson = JSON.stringify(oData);
+    var oPerson = JSON.parse(sPerson);
+
+    //output
+    alert(sPerson);
+    /* Output: "{"Name":"SooYoung","Age":"29"}" */
+    alert(oPerson.Name);
+    /* Output: "SooYoung" */
+
+example 2) front-end < > back-end
+
+<front-ent>
+    function signup()
+    {
+    	var member = {
+    		"email": "test@naver.com",
+    		"password": "1234"
+    	};
+    	
+    	console.log('111');
+    	$.ajax({
+    		url : '/account/signup',
+    		dataType : 'json',
+    		type : 'POST',
+    		data : JSON.stringify(member), //그냥 member 사용하면 415 error
+    		contentType : 'application/json; charset=UTF-8',
+    		success : function(result) {
+    			console.log('222');
+    			console.log(result);
+    		}
+    	});
+    }
+
+<back-end>
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public MemberResultDto signup(@RequestBody Member member)
+	{
+		systemLog.info("try to sign up..");
+		MemberResultDto memberResultDto = memberService.signUp(member);
+		return memberResultDto;
+	}
