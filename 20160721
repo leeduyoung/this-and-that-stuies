@@ -1,0 +1,8 @@
+# Firebase (Realtime Database)
+
+- Realtime Database는 클라우드 기반 데이터베이스이다.
+- json 형태로 데이터를 실시간으로 저장한다.
+- 연결된 모든 클라이언트에서 실시간으로 데이터 저장 및 동기화 가능
+
+
+

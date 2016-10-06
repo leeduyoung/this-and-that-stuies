@@ -1,0 +1,12 @@
+테크니컬 SEO(검색엔진최적화)
+1. Sitemap.xml 
+2. robot.txt
+    - User-agent: *
+      Allow: /
+3. Meta Description
+4. Image Description
+5. screemingfrog(무료진단)
+    - 50page까지 공짜로 돌려줌.
+6. 브랜드, 태그라인, 페이지 요약 설명. (title, meta description에 넣을것)
+
+ 
